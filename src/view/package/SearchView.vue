@@ -3,6 +3,7 @@
         <SearchInput />
         <SearchResultTable />
         <PackagesPagination />
+        <DetailsModal />
     </div>
 </template>
 
@@ -10,6 +11,7 @@
 import SearchInput from '@/components/package/SearchInput.vue';
 import SearchResultTable from '../../components/package/SearchResultTable.vue';
 import PackagesPagination from '../../components/package/PackagesPagination.vue';
+import DetailsModal from '../../components/package/DetailsModal.vue';
 </script>
 
 <style scoped lang="scss">

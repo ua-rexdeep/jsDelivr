@@ -26,7 +26,7 @@ export type PackageT = {
     },
     score: {
         final: number,
-        details: {
+        detail: {
             quality: number,
             popularity: number,
             maintenance: number,

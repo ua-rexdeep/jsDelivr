@@ -37,6 +37,10 @@ export const usePackages = defineStore('packages', () => {
         latestFoundPackages.value.splice(0);
     }
 
+    function GetFromLatest(name: string) {
+        return latestFoundPackages.value.find((pkg) => pkg.package.name == name);
+    }
+
     return {
         latestFoundPackages,
         availablePages,
@@ -47,5 +51,6 @@ export const usePackages = defineStore('packages', () => {
         SearchPackages,
         SearchPackagesPage,
         ClearSearchData,
+        GetFromLatest,
     }
 })

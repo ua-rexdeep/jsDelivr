@@ -17,6 +17,7 @@
 <style scoped>
 .footer {
     @apply flex justify-between px-10 py-4 bg-gray-100;
+    @apply fixed bottom-0 w-full;
 }
 
 .footer__left {

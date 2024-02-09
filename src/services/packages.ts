@@ -6,6 +6,10 @@ class PackageService {
         return API.PackageAPI.SearchPackage(name, limit, page);
     }
 
+    GetPackageMeta(name: string) {
+        return API.PackageAPI.GetPackageMeta(name);
+    }
+
 }
 
 export default PackageService;

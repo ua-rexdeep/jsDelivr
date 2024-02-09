@@ -20,6 +20,13 @@ async function SearchPackage(name: string, limit: number = 10, page = 1) {
     return data;
 }
 
+async function GetPackageMeta(pkg: string) {
+    const { data } = await adapter.get(Endpoints.JSDelivrRegistry + 'packages/npm/' + pkg);
+
+    return data;
+}
+
 export default {
     SearchPackage,
+    GetPackageMeta,
 }

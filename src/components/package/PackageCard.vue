@@ -1,7 +1,7 @@
 <template>
     <div class="packageCard">
         <div class="packageCard__title">
-            <div class="packageCard__titlename">{{ package.name }}</div>
+            <div class="packageCard__titlename" @click="onCardClick">{{ package.name }}</div>
             <div class="packageCard__exactname" v-if="exactmatch">exact match</div>
         </div>
         <div class="packageCard__desc">{{ package.description }}</div>
@@ -22,6 +22,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
+const emit = defineEmits(['openDetails'])
 const props = defineProps({
     package: {
         required: true,
@@ -33,7 +34,11 @@ const props = defineProps({
     }
 });
 
-const publishDate = computed(() => new Date(props.package.date).toLocaleDateString())
+const publishDate = computed(() => new Date(props.package.date).toLocaleDateString());
+
+function onCardClick() {
+    emit('openDetails');
+}
 
 </script>
 
@@ -49,7 +54,8 @@ const publishDate = computed(() => new Date(props.package.date).toLocaleDateStri
 
     &__titlename {
         @apply font-bold;
-        @apply text-gray-800;
+        @apply text-gray-800 border-b-2 border-b-transparent hover:border-b-black;
+        @apply cursor-pointer;
     }
 
     &__exactname {
