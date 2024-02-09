@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "start": "serve ./dist"
+    "start": "npm run build && serve ./dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
