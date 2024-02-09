@@ -1,0 +1,10 @@
+@import './tailwind.css';
+
+html, body, input, a {
+    all: unset;
+}
+
+html {
+    font-family: Arial;
+    font-size: 16px;
+}
