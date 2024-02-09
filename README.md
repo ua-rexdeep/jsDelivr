@@ -12,4 +12,4 @@
 
 > npm i && npm run start
 
-:checkwhite_check_mark: Done
+✅ Done
