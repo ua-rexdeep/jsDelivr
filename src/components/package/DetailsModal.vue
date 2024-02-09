@@ -28,7 +28,7 @@
                     <div class="detailsModal__tags__title">Tags</div>
                     <div class="detailsModal__tags__list">
                         <div v-for="[tag, version] in Object.entries(PackageDetails.tags)" :key="tag"
-                            class="detailsModal__tags__item">
+                             class="detailsModal__tags__item">
                             <div>{{ tag }}:</div>
                             <div class="detailsModal__tags__version">{{ version }}</div>
                         </div>
@@ -38,7 +38,7 @@
                     <div class="detailsModal__links__title">Links</div>
                     <div class="detailsModal__links__list">
                         <a target="_blank" :href="link" class="detailsModal__links__item" :key="name"
-                            v-for="[name, link] in Object.entries(PackageMeta?.package.links)">
+                           v-for="[name, link] in Object.entries(Links)">
                             <font-awesome-icon :icon="faArrowUpRightFromSquare" />
                             <div>{{ name[0].toLocaleUpperCase() + name.slice(1) }}</div>
                         </a>
@@ -72,6 +72,9 @@ const popularity = computed(() => {
     if (PackageMeta.value?.score.detail.popularity != null) {
         return (PackageMeta.value.score.detail.popularity * 100) ^ 0;
     } else return 0;
+})
+const Links = computed(() => {
+    return PackageMeta.value?.package.links || [];
 })
 
 function closeModal() {
